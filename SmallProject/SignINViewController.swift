@@ -25,13 +25,18 @@ class SignINViewController: UIViewController
         let usernameStore = UserDefaults.standard.string(forKey: "username")
         let passwordStore = UserDefaults.standard.string(forKey: "password")
         
-        if usernameStore == UsernameTxt.text || passwordStore == PasswordTxt.text
+        
+        
+        if usernameStore == UsernameTxt.text && passwordStore == PasswordTxt.text
         {
             UserDefaults.standard.set(true, forKey: "is UserLoggedIn")
             UserDefaults.standard.synchronize()
             
-            navigationController?.popViewController(animated: true)
-            dismiss(animated: true, completion: nil)
+            let tableview = storyboard?.instantiateViewController(withIdentifier: "Table") as! TableViewController
+            self.navigationController?.pushViewController(tableview, animated: true)
+            
+//            navigationController?.popViewController(animated: true)
+//            dismiss(animated: true, completion: nil)
         }
     }
     

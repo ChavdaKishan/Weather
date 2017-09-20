@@ -42,7 +42,7 @@ class TableViewController: UIViewController,UITableViewDataSource,UITableViewDel
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "") as! MyCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MyCell
         cell.Lbl1.text = arr1[indexPath.row]
         cell.Lbl2.text = arr2[indexPath.row]
         self.TableView.backgroundColor = .clear
